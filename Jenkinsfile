@@ -14,25 +14,25 @@ pipeline {
         stage('Compile'){
             steps{
                 echo 'Compilation of the source code'
-                bat 'mvn compile'
+                sh 'mvn compile'
             }
         }
         stage('Test'){
             steps{
                  echo 'Testing of the source code'
-                 bat 'mvn test'
+                 sh 'mvn test'
             }
         }
         stage('QA'){
             steps{
                  echo 'QA of the source code'
-                 bat 'mvn pmd:pmd'
+                 sh 'mvn pmd:pmd'
             }
         }
         stage('Package'){
             steps{
                  echo 'Package the source code'
-                 bat 'mvn package'
+                 sh 'mvn package'
                 
             }
         }
